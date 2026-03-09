@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
       );
 
       // Open email client
-      window.location.href = 'mailto:info@jltmjunkremoval.com?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:info@jltmjunk.com?subject=' + subject + '&body=' + body;
 
       // Show success message
       alert('Thank you! Your email client will open with your quote request. If it doesn\'t open, please call us at 737-265-2600.');
