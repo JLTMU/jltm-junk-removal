@@ -68,22 +68,36 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
 
-      // Format message for email
-      const subject = encodeURIComponent('Quote Request from ' + data.firstName + ' ' + data.lastName);
-      const body = encodeURIComponent(
-        'Name: ' + data.firstName + ' ' + data.lastName + '\n' +
-        'Email: ' + data.email + '\n' +
-        'Phone: ' + data.phone + '\n' +
-        'Address: ' + data.address + (data.address2 ? ', ' + data.address2 : '') + ', ' + data.city + ', TX ' + data.zip + '\n' +
-        'Estimated Capacity: ' + (data.capacity || 'Not specified') + '\n\n' +
-        'Message:\n' + data.message
-      );
+      // Get submit button and disable it
+      const submitBtn = quoteForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
 
-      // Open email client
-      window.location.href = 'mailto:info@jltmjunk.com?subject=' + subject + '&body=' + body;
-
-      // Show success message
-      alert('Thank you! Your email client will open with your quote request. If it doesn\'t open, please call us at 737-265-2600.');
+      // Submit to API
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(result) {
+        if (result.success) {
+          quoteForm.innerHTML = '<div style="text-align: center; padding: 2rem;"><h3 style="color: var(--green);">Thank You!</h3><p>Your quote request has been sent. We\'ll get back to you within 24 hours, usually much sooner.</p><p style="margin-top: 1rem;"><strong>Need faster service?</strong><br>Call us at <a href="tel:7372652600">737-265-2600</a></p></div>';
+        } else {
+          throw new Error(result.error || 'Failed to send');
+        }
+      })
+      .catch(function(error) {
+        console.error('Error:', error);
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+        alert('Sorry, there was an error sending your request. Please call us at 737-265-2600.');
+      });
     });
   }
 
