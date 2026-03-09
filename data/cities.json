@@ -1,0 +1,70 @@
+{
+  "cities": [
+    {
+      "name": "Leander",
+      "slug": "leander",
+      "state": "TX",
+      "isHomeBase": true,
+      "metaTitle": "Junk Removal Leander TX | Same-Day Pickup | JLTM Junk Removal",
+      "metaDescription": "Local junk removal in Leander TX. Transparent pricing, same-day service available. Furniture, appliances, garage cleanouts & more. Call 737-265-2600 for a free quote.",
+      "localIntro": "Leander has transformed from a quiet railroad town into one of the fastest-growing cities in America — and with that growth comes a lot of stuff to get rid of. Whether you're in Crystal Falls clearing out the garage before the HOA notices, downsizing from a Bryson home after the kids moved out, or finally tackling that pile in the Mason Hills storage room, we get it. We're based right here in Leander, which means no fuel surcharges and response times that Austin-based companies can't match.",
+      "localLandmarks": "Crystal Falls, Bryson, Mason Hills, Block House Creek, Benbrook Ranch, Summerlyn, Lakeline Ranch",
+      "localFact": "As Leander locals ourselves, we know the difference between a Summerlyn garage cleanout and a Block House Creek estate — and we price fairly for both."
+    },
+    {
+      "name": "Cedar Park",
+      "slug": "cedar-park",
+      "state": "TX",
+      "isHomeBase": false,
+      "metaTitle": "Junk Removal Cedar Park TX | Fast & Affordable | JLTM Junk Removal",
+      "metaDescription": "Professional junk removal in Cedar Park TX. Volume-based pricing, no hidden fees. Appliance hauling, furniture removal, estate cleanouts. Call 737-265-2600 today.",
+      "localIntro": "Cedar Park sits right at the sweet spot — close enough to Austin for the jobs, far enough to still feel like home. From the established neighborhoods of Buttercup Creek to the growing communities around Twin Creeks, we've hauled junk from just about every corner of this city. If you've been putting off that garage cleanout because you didn't want to deal with Austin traffic and Austin prices, you're in the right place. We're your neighbors in Leander, not a franchise dispatching trucks from downtown.",
+      "localLandmarks": "Buttercup Creek, Twin Creeks, Carriage Hills, Anderson Mill, Ranch at Brushy Creek, Whitestone Oaks, Lakeline Mall area",
+      "localFact": "We've done more than a few cleanouts for families moving from Cedar Park's older neighborhoods into new construction — and we treat both with the same respect."
+    },
+    {
+      "name": "Georgetown",
+      "slug": "georgetown",
+      "state": "TX",
+      "isHomeBase": false,
+      "metaTitle": "Junk Removal Georgetown TX | Estate Cleanouts & More | JLTM Junk Removal",
+      "metaDescription": "Trusted junk removal in Georgetown TX. Estate cleanouts, furniture hauling, appliance removal. Transparent pricing. Serving Sun City & all Georgetown. Call 737-265-2600.",
+      "localIntro": "Georgetown's historic downtown square and the boom of new development around it create a unique mix — century-old estates that need careful cleanouts and brand-new Sun City homes where retirees are finally letting go of decades of accumulated belongings. We handle both with the same professionalism. Whether you're clearing out a family home near Southwestern University or helping a parent downsize in Sun City, we approach every job with respect for the history and the people involved.",
+      "localLandmarks": "Sun City, Berry Creek, Cimarron Hills, Serenada, Georgetown Village, River Ridge, Historic Downtown",
+      "localFact": "Sun City estate cleanouts are one of our specialties — we understand the sensitivity involved and work at whatever pace you need."
+    },
+    {
+      "name": "Liberty Hill",
+      "slug": "liberty-hill",
+      "state": "TX",
+      "isHomeBase": false,
+      "metaTitle": "Junk Removal Liberty Hill TX | Local & Reliable | JLTM Junk Removal",
+      "metaDescription": "Junk removal services in Liberty Hill TX. From ranch cleanouts to new construction debris. No fuel surcharges from Austin. Call JLTM at 737-265-2600 for a free quote.",
+      "localIntro": "Liberty Hill has held onto its small-town character even as Santa Rita Ranch and the new developments have brought thousands of new families to the area. Out here, you might need a ranch property cleared of old equipment one day and a subdivision garage cleaned out the next — and the Austin-based junk companies either won't make the drive or charge you extra for it. We're just down 183 in Leander, which means Liberty Hill is a quick trip with no fuel surcharges added to your bill.",
+      "localLandmarks": "Santa Rita Ranch, Stagecoach Hills, Rio Ancho, Downtown Liberty Hill, Gabriel's Overlook",
+      "localFact": "We've cleared everything from old barn equipment on ranch properties to moving boxes in brand-new Santa Rita homes — Liberty Hill's range is part of what makes it interesting."
+    },
+    {
+      "name": "Round Rock",
+      "slug": "round-rock",
+      "state": "TX",
+      "isHomeBase": false,
+      "metaTitle": "Junk Removal Round Rock TX | Same-Day Available | JLTM Junk Removal",
+      "metaDescription": "Fast junk removal in Round Rock TX. Residential & commercial cleanouts, appliance hauling, furniture removal. Upfront pricing. Call 737-265-2600 for your free quote.",
+      "localIntro": "Round Rock has grown from a small railroad stop into the second-largest city in the Austin metro — and with Dell's headquarters and all the tech growth, there's no shortage of people moving in, moving out, and upgrading everything in between. From the older neighborhoods near downtown to the sprawling developments out by Old Settlers Park, we provide fast, fairly-priced junk removal without the runaround you get from the big national franchises. Local accountability matters.",
+      "localLandmarks": "Old Settlers Park area, Downtown Round Rock, Brushy Creek, Teravista, Paloma Lake, Forest Creek, Round Rock Premium Outlets area",
+      "localFact": "Round Rock's mix of established Dell families and constant tech turnover means we see a lot of office-to-home transitions — and we're always ready to haul the old desk and filing cabinet."
+    },
+    {
+      "name": "Williamson County",
+      "slug": "williamson-county",
+      "state": "TX",
+      "isHomeBase": false,
+      "metaTitle": "Junk Removal Williamson County TX | Serving All Cities | JLTM Junk Removal",
+      "metaDescription": "Williamson County junk removal — Leander, Cedar Park, Georgetown, Round Rock, Liberty Hill & more. Licensed, insured, local. Call JLTM at 737-265-2600.",
+      "localIntro": "Williamson County stretches from the tech corridors of Round Rock to the ranch land north of Liberty Hill, and we serve all of it. As a Leander-based company, Williamson County is our home territory — not an afterthought tagged onto an Austin service area. That means faster response times, no fuel surcharges for driving out from downtown, and the kind of local accountability you only get from a business that operates where it lives. Whether you're in a Sun City retirement community, a Cedar Park subdivision, or a Liberty Hill ranch property, we're genuinely local to you.",
+      "localLandmarks": "All Williamson County cities and unincorporated areas",
+      "localFact": "We're proud to be a Williamson County business serving Williamson County residents — your money stays in the local economy."
+    }
+  ]
+}
