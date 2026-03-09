@@ -74,7 +74,7 @@ This quote request was submitted via jltmjunk.com
 
     if (!response.ok) {
       console.error('Resend error:', data);
-      return res.status(500).json({ error: 'Failed to send email' });
+      return res.status(500).json({ error: 'Failed to send email', details: data });
     }
 
     return res.status(200).json({ success: true, message: 'Quote request sent successfully' });
