@@ -144,8 +144,30 @@ p {
 }
 
 .logo img {
-  height: 60px;
+  height: 90px;
   width: auto;
+}
+
+.header-phone {
+  display: none;
+  background: var(--green);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.header-phone:hover {
+  background: var(--green-dark);
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .header-phone {
+    display: block;
+  }
 }
 
 .logo-text {
@@ -636,7 +658,7 @@ p {
 }
 
 .footer-logo img {
-  height: 80px;
+  height: 120px;
   margin-bottom: 1rem;
 }
 
