@@ -61,8 +61,8 @@ This quote request was submitted via jltmjunk.com
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'JLTM Website <onboarding@resend.dev>',
-        to: 'jltm.unlimited@gmail.com',
+        from: 'JLTM Junk Removal <info@jltmjunk.com>',
+        to: 'info@jltmjunk.com',
         reply_to: email,
         subject: `Quote Request from ${firstName} ${lastName}`,
         html: emailHtml,
