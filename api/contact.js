@@ -62,7 +62,7 @@ This quote request was submitted via jltmjunk.com
       },
       body: JSON.stringify({
         from: 'JLTM Website <onboarding@resend.dev>',
-        to: 'info@jltmjunk.com',
+        to: 'jltm.unlimited@gmail.com',
         reply_to: email,
         subject: `Quote Request from ${firstName} ${lastName}`,
         html: emailHtml,
