@@ -11,5 +11,11 @@
       "destination": "https://jltmjunk.com/:path*",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/blog/:slug",
+      "destination": "/api/blog/:slug"
+    }
   ]
 }

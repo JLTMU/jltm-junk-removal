@@ -10,6 +10,15 @@
     gtag('config', 'G-VJSSY9Q6Q5');
   </script>
 
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "w4yiwm3v07");
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Junk removal tips, guides, and local insights for Leander, Cedar Park, Georgetown, and Williamson County TX. Learn about pricing, what to expect, and how to prepare.">
@@ -70,6 +79,12 @@
     .blog-card .read-more {
       font-weight: 600;
       color: var(--green);
+    }
+    .blog-loading {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem;
+      color: var(--gray-dark);
     }
   </style>
 </head>
@@ -134,50 +149,113 @@
     </div>
   </section>
 
-  <!-- Blog Posts -->
+  <!-- Blog Posts (Dynamically loaded from Admin Hub) -->
   <section class="section">
     <div class="container">
-      <div class="blog-grid">
-
-        <article class="blog-card">
-          <div class="blog-card-content">
-            <div class="meta">March 9, 2026 &bull; Leander</div>
-            <h3><a href="junk-removal-leander-tx-complete-guide.html">The Complete Guide to Junk Removal in Leander, TX</a></h3>
-            <p>Everything Leander homeowners need to know about getting rid of junk — from what we take to what it costs to how to prepare for pickup day.</p>
-            <a href="junk-removal-leander-tx-complete-guide.html" class="read-more">Read More →</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-card-content">
-            <div class="meta">March 9, 2026 &bull; Cedar Park</div>
-            <h3><a href="appliance-removal-cedar-park-tx.html">Appliance Removal in Cedar Park, TX: What You Need to Know</a></h3>
-            <p>Getting rid of an old fridge, washer, or dryer in Cedar Park? Here's how appliance removal works, what it costs, and why you shouldn't put it on the curb.</p>
-            <a href="appliance-removal-cedar-park-tx.html" class="read-more">Read More →</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-card-content">
-            <div class="meta">March 9, 2026 &bull; Austin Area</div>
-            <h3><a href="how-much-does-junk-removal-cost-austin-area.html">How Much Does Junk Removal Cost in the Austin Area?</a></h3>
-            <p>A transparent breakdown of junk removal pricing in the Austin metro — what affects the price, how to get the best value, and why published pricing matters.</p>
-            <a href="how-much-does-junk-removal-cost-austin-area.html" class="read-more">Read More →</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-card-content">
-            <div class="meta">March 9, 2026 &bull; Williamson County</div>
-            <h3><a href="spring-cleanout-tips-williamson-county.html">Spring Cleanout Tips for Williamson County Homeowners</a></h3>
-            <p>Spring is the perfect time to clear the clutter. Here's a practical guide to tackling your garage, attic, and yard before the Texas heat arrives.</p>
-            <a href="spring-cleanout-tips-williamson-county.html" class="read-more">Read More →</a>
-          </div>
-        </article>
-
+      <div id="blog-grid" class="blog-grid">
+        <!-- Loading state -->
+        <div id="blog-loading" class="blog-loading">
+          <p>Loading posts...</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <script>
+    // JLTM Blog Loader - Fetches posts from Admin Hub
+    (function() {
+      const BLOG_API = 'https://admin.jltmunlimited.com/api/blog/public/jltm-junk';
+      const container = document.getElementById('blog-grid');
+      const loading = document.getElementById('blog-loading');
+
+      // Static fallback posts (original content - these have .html files)
+      const fallbackPosts = [
+        {
+          title: 'The Complete Guide to Junk Removal in Leander, TX',
+          slug: 'junk-removal-leander-tx-complete-guide',
+          excerpt: 'Everything Leander homeowners need to know about getting rid of junk — from what we take to what it costs to how to prepare for pickup day.',
+          publishedDate: '2026-03-09',
+          location: 'Leander',
+          isStatic: true
+        },
+        {
+          title: 'Appliance Removal in Cedar Park, TX: What You Need to Know',
+          slug: 'appliance-removal-cedar-park-tx',
+          excerpt: 'Getting rid of an old fridge, washer, or dryer in Cedar Park? Here\'s how appliance removal works, what it costs, and why you shouldn\'t put it on the curb.',
+          publishedDate: '2026-03-09',
+          location: 'Cedar Park',
+          isStatic: true
+        },
+        {
+          title: 'How Much Does Junk Removal Cost in the Austin Area?',
+          slug: 'how-much-does-junk-removal-cost-austin-area',
+          excerpt: 'A transparent breakdown of junk removal pricing in the Austin metro — what affects the price, how to get the best value, and why published pricing matters.',
+          publishedDate: '2026-03-09',
+          location: 'Austin Area',
+          isStatic: true
+        },
+        {
+          title: 'Spring Cleanout Tips for Williamson County Homeowners',
+          slug: 'spring-cleanout-tips-williamson-county',
+          excerpt: 'Spring is the perfect time to clear the clutter. Here\'s a practical guide to tackling your garage, attic, and yard before the Texas heat arrives.',
+          publishedDate: '2026-03-09',
+          location: 'Williamson County',
+          isStatic: true
+        }
+      ];
+
+      function formatDate(dateStr) {
+        if (!dateStr) return '';
+        const date = new Date(dateStr);
+        return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+      }
+
+      function getPostUrl(post) {
+        // Static posts use .html files, dynamic posts use clean URLs
+        return post.isStatic ? post.slug + '.html' : '/blog/' + post.slug;
+      }
+
+      function renderPosts(posts) {
+        container.innerHTML = posts.map(post => {
+          const url = getPostUrl(post);
+          return `
+          <article class="blog-card">
+            <div class="blog-card-content">
+              <div class="meta">${formatDate(post.publishedDate)}${post.location ? ' &bull; ' + post.location : ''}</div>
+              <h3><a href="${url}">${post.title}</a></h3>
+              <p>${post.excerpt}</p>
+              <a href="${url}" class="read-more">Read More →</a>
+            </div>
+          </article>
+        `}).join('');
+      }
+
+      // Fetch from Admin Hub API
+      fetch(BLOG_API)
+        .then(res => {
+          if (!res.ok) throw new Error('API unavailable');
+          return res.json();
+        })
+        .then(data => {
+          if (data.posts && data.posts.length > 0) {
+            // Combine API posts with static fallbacks (API posts first)
+            const apiSlugs = new Set(data.posts.map(p => p.slug));
+            const combined = [
+              ...data.posts,
+              ...fallbackPosts.filter(p => !apiSlugs.has(p.slug))
+            ];
+            renderPosts(combined);
+          } else {
+            // No API posts, use fallbacks
+            renderPosts(fallbackPosts);
+          }
+        })
+        .catch(err => {
+          console.log('Blog API unavailable, using static posts:', err.message);
+          renderPosts(fallbackPosts);
+        });
+    })();
+  </script>
 
   <!-- CTA Section -->
   <section class="cta-section">
