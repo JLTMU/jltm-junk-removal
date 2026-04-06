@@ -34,7 +34,8 @@ export default async function handler(req, res) {
 
 function formatDate(dateStr) {
   if (!dateStr) return '';
-  const date = new Date(dateStr);
+  // Add noon time to prevent timezone rollback (date-only strings parse as UTC midnight)
+  const date = new Date(dateStr + 'T12:00:00');
   return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
 
